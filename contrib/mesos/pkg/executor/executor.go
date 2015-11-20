@@ -47,6 +47,7 @@ import (
 const (
 	containerPollTime = 1 * time.Second
 	launchGracePeriod = 5 * time.Minute
+        podSyncTime       = 1 * time.Second
 	podRelistPeriod   = 5 * time.Minute
 )
 
@@ -665,7 +666,8 @@ func (k *KubernetesExecutor) __launchTask(driver bindings.ExecutorDriver, taskId
 	// Wait for the pod to go away and stop monitoring once it does
 	// TODO (jdefelice) replace with an /events watch?
 	for {
-		time.Sleep(containerPollTime)
+		//time.Sleep(containerPollTime)
+                time.Sleep(podSyncTime)
 		if k.checkForLostPodTask(driver, taskId, knownPod) {
 			return
 		}
