@@ -47,7 +47,7 @@ import (
 const (
 	containerPollTime = 1 * time.Second
 	launchGracePeriod = 5 * time.Minute
-        podSyncTime       = 1 * time.Second
+    podSyncTime       = 180 * time.Second
 	podRelistPeriod   = 5 * time.Minute
 )
 
