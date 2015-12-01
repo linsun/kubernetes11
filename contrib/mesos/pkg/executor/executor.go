@@ -666,7 +666,7 @@ func (k *KubernetesExecutor) __launchTask(driver bindings.ExecutorDriver, taskId
 	// Wait for the pod to go away and stop monitoring once it does
 	// TODO (jdefelice) replace with an /events watch?
 	// lin print out code
-	fmt.Printf("linsun podSyncTime=180s")
+	//fmt.Printf("linsun podSyncTime=180s")
 	for {
 		//time.Sleep(containerPollTime)
                 time.Sleep(podSyncTime)
